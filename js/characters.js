@@ -1,18 +1,55 @@
 // my parent - characters
+
 class Characters {
 	constructor(nom, health,damage){
 		this.nom = nom;
 		this.health = health;
-		/*this.damage = function() {
-		}*/
+	}
+}
+
+//j'étends ma classe characters à hero
+class MyHero extends Characters {
+	constructor(nom, health,damage,armor){
+		super(nom,health,damage);
+		this.armor = armor;
+	}
+
+	healthBonus() {
+		this.health += 50;
+		console.log(this.nom + ' a reçu un bonus de vie. ses pv sont a '+this.health)
+	}
+	
+	armorBonus(){
+		this.armor +=20;
+		return this.armor;
+		console.log(this.nom +  "a reçu un bonus d'armure. ses pv sont a" + this.armor )
+	}
+}
+
+//j'étends ma classe characters
+
+class Ennemies extends Characters {
+	constructor(nom, health,damage){
+		super(nom,health,damage)
 	}
 }
 
 
+//je donne des attributs à mon héro
+let jack = new MyHero("Jack",200,15,0);
 
+//je donne des attributs à mes ennemis
+let minion = new Ennemies("minion",10,10,0);
+let lieutenantMinion = new Ennemies ("Lieutenant Minion",30,30,0);
+let chefMinion = new Ennemies ("chefMinion",100,100,0);
 
+//Story 1 : le héros reçoit un bonus vie
+console.log(jack.healthBonus());
+console.log(jack.health);
 
-
+//Story 2 : le héros reçoit un bonus armure
+console.log(jack.armorBonus());
+console.log(jack.armor);
 
 //Story 3 : le héros se fait attaquer par un minion 
 
