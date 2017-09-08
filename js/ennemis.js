@@ -15,7 +15,6 @@ export class Ennemies extends Characters {
 	}
 }
 
-
 //je donne des attributs à mes ennemis
 let minion = new Ennemies("minion",10,10,0);
 let lieutenantMinion = new Ennemies ("Lieutenant Minion",30,30,0);

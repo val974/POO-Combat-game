@@ -154,10 +154,11 @@ var MyHero = exports.MyHero = function (_Characters) {
 
 var jack = new MyHero("Jack", 200, 15, 0);
 
-console.log(jack.healthBonus());
+console.log(jack);
+/*console.log(jack.healthBonus());
 console.log(jack.health);
 console.log(jack.armorBonus());
-console.log(jack.armor);
+console.log(jack.armor);*/
 
 /*export default MyHero;*/
 
