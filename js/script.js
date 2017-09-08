@@ -6,5 +6,3 @@ export class Characters {
 		this.damage = damage;
 	}
 }
-
-export default Characters;

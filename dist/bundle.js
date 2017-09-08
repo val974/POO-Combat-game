@@ -60,24 +60,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _script = __webpack_require__(1);
-
-var _hero = __webpack_require__(2);
-
-var _ennemis = __webpack_require__(3);
-
-/***/ }),
-/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -98,7 +85,18 @@ var Characters = exports.Characters = function Characters(nom, health, damage) {
 	this.damage = damage;
 };
 
-exports.default = Characters;
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _script = __webpack_require__(0);
+
+var _hero = __webpack_require__(2);
+
+var _ennemis = __webpack_require__(3);
 
 /***/ }),
 /* 2 */
@@ -110,61 +108,51 @@ exports.default = Characters;
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-exports.Heros = undefined;
+exports.MyHero = undefined;
 
-var _script = __webpack_require__(1);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _script2 = _interopRequireDefault(_script);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _script = __webpack_require__(0);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } //j'étends ma classe characters à heros
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+//j'étends ma classe characters à heros
 
-var Heros = exports.Heros = function (_Characters) {
-	_inherits(Heros, _Characters);
+var MyHero = exports.MyHero = function (_Characters) {
+	_inherits(MyHero, _Characters);
 
-	function Heros(name, health, damage) {
-		_classCallCheck(this, Heros);
+	function MyHero(nom, health, damage, armor) {
+		_classCallCheck(this, MyHero);
 
-		return _possibleConstructorReturn(this, (Heros.__proto__ || Object.getPrototypeOf(Heros)).call(this, name, health, damage));
+		var _this = _possibleConstructorReturn(this, (MyHero.__proto__ || Object.getPrototypeOf(MyHero)).call(this, nom, health, damage));
+
+		_this.armor = armor;
+		return _this;
 	}
 
-	return Heros;
-}(_script2.default);
+	_createClass(MyHero, [{
+		key: "healthBonus",
+		value: function healthBonus() {
+			this.health += 50;
+			return this.health += 50;
+			console.log(this.nom + ' a reçu un bonus de vie. ses pv sont a ' + this.health);
+		}
+	}, {
+		key: "armorBonus",
+		value: function armorBonus() {
+			this.armor += 20;
+			console.log(this.nom + " a reçu un bonus d'armure. ses points d'armure sont a " + this.armor);
+			return this.armor;
+		}
+	}]);
 
-/*//j'étends ma classe characters à heros
+	return MyHero;
+}(_script.Characters);
 
-import {Characters} from "../js/script.js";
-
-export class MyHero extends Characters {
-	constructor(nom, health,damage,armor){
-		super(nom,health,damage);
-		this.armor = armor;
-	}
-
-	healthBonus() {
-		this.health += 50;
-		/*return this.health += 50;
-		console.log(this.nom + ' a reçu un bonus de vie. ses pv sont a '+this.health);
-		
-	}
-	
-
-	
-	armorBonus(){
-		this.armor +=20;
-		console.log(this.nom +  " a reçu un bonus d'armure. ses points d'armure sont a " + this.armor );
-		/*return this.armor;
-	}
-}
-
-
-je donne des attributs à mon héro
-let jack = new MyHero("Jack",200,15,0);
+var jack = new MyHero("Jack", 200, 15, 0);
 
 console.log(jack.healthBonus());
 console.log(jack.health);
@@ -185,14 +173,20 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Ennemies = undefined;
 
-var _script = __webpack_require__(1);
+var _script = __webpack_require__(0);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } //j'étends ma classe characters à ennemis
-
+/*class Characters {
+	constructor(nom, health,damage){
+		this.nom = nom;
+		this.health = health;
+		this.damage = damage;
+	}
+}*/
 
 var Ennemies = exports.Ennemies = function (_Characters) {
 	_inherits(Ennemies, _Characters);
