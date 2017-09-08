@@ -1,5 +1,5 @@
 // my parent - characters
-class Characters {
+export class Characters {
 	constructor(nom, health,damage){
 		this.nom = nom;
 		this.health = health;
@@ -7,6 +7,4 @@ class Characters {
 	}
 }
 
-/*import {MyHero} from "../js/hero.js"
-
-import{Ennemies} from "../js/ennemis.js"*/
+export default Characters;

@@ -1,13 +1,7 @@
 //j'étends ma classe characters à ennemis
-/*class Characters {
-	constructor(nom, health,damage){
-		this.nom = nom;
-		this.health = health;
-		this.damage = damage;
-	}
-}*/
+import {Characters} from "../js/script.js";
 
-class Ennemies extends Characters {
+export class Ennemies extends Characters {
 	constructor(nom, health,damage){
 		super(nom,health,damage)
 	}

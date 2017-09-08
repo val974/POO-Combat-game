@@ -2,7 +2,7 @@ const path = require('path');
 
 
 module.exports = {
-	entry:'./js/script.js',
+	entry:'./js/index.js',
 	watch: true,
 
 	output : {

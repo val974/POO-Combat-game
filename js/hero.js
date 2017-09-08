@@ -1,13 +1,42 @@
 //j'étends ma classe characters à heros
-/*class Characters {
-	constructor(nom, health,damage){
-		this.nom = nom;
-		this.health = health;
-		this.damage = damage;
+
+import Characters from "../js/script.js";
+
+export class Heros extends Characters {
+	constructor(name,health,damage) {
+		super(name,health,damage);
 	}
 }
-*/
-class MyHero extends Characters {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*//j'étends ma classe characters à heros
+
+import {Characters} from "../js/script.js";
+
+export class MyHero extends Characters {
 	constructor(nom, health,damage,armor){
 		super(nom,health,damage);
 		this.armor = armor;
@@ -15,7 +44,7 @@ class MyHero extends Characters {
 
 	healthBonus() {
 		this.health += 50;
-		/*return this.health += 50;*/
+		/*return this.health += 50;
 		console.log(this.nom + ' a reçu un bonus de vie. ses pv sont a '+this.health);
 		
 	}
@@ -25,12 +54,12 @@ class MyHero extends Characters {
 	armorBonus(){
 		this.armor +=20;
 		console.log(this.nom +  " a reçu un bonus d'armure. ses points d'armure sont a " + this.armor );
-		/*return this.armor;*/
+		/*return this.armor;
 	}
 }
 
 
-//je donne des attributs à mon héro
+je donne des attributs à mon héro
 let jack = new MyHero("Jack",200,15,0);
 
 console.log(jack.healthBonus());
