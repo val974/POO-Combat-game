@@ -10,7 +10,7 @@ export let jack = new MyHero("Jack",200,15);
 let getButton = document.querySelectorAll('button');
 getButton[1].addEventListener("click", function essai(){
 	jack.getattacked(minion);
-	ecrire()
+	ecrire();
 });
 
 function ecrire(){

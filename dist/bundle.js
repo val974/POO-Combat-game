@@ -64,7 +64,45 @@
 /******/ })
 /************************************************************************/
 /******/ ([
-/* 0 */,
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+// my parent - characters
+
+var Characters = exports.Characters = function () {
+	function Characters(nom, health, damage) {
+		_classCallCheck(this, Characters);
+
+		this.nom = nom;
+		this.health = health;
+		this.damage = damage;
+	}
+
+	_createClass(Characters, [{
+		key: "getattacked",
+		value: function getattacked(ennemis) {
+			this.health -= ennemis.damage;
+			if (this.health <= 0) {
+				this.health = 0;
+			}
+		}
+	}]);
+
+	return Characters;
+}();
+
+/***/ }),
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -76,7 +114,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.MyHero = undefined;
 
-var _characters = __webpack_require__(9);
+var _characters = __webpack_require__(0);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -109,7 +147,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Ennemies = undefined;
 
-var _characters = __webpack_require__(9);
+var _characters = __webpack_require__(0);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -141,7 +179,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.jack = undefined;
 
-var _characters = __webpack_require__(9);
+var _characters = __webpack_require__(0);
 
 var _hero = __webpack_require__(1);
 
@@ -173,7 +211,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.minion = undefined;
 
-var _characters = __webpack_require__(9);
+var _characters = __webpack_require__(0);
 
 var _hero = __webpack_require__(1);
 
@@ -184,13 +222,13 @@ var _jack = __webpack_require__(3);
 var minion = exports.minion = new _ennemis.Ennemies("minion", 30, 10);
 
 var getButton = document.querySelectorAll('button');
-getButton[0].addEventListener("click", function () {
-	minion.getattacked(_jack.jack);
+getButton[0].addEventListener("click", function ajout() {
 	pointsminion();
+	minion.getattacked(_jack.jack);
 });
 
 function pointsminion() {
-	document.getElementById("pointsMinion").innerHTML = "Les pv du héros sont de " + minion.health;
+	document.getElementById("pointsMinion").innerHTML = "Les pv de l'ennemi sont de " + minion.health;
 }
 
 /***/ }),
@@ -200,7 +238,7 @@ function pointsminion() {
 "use strict";
 
 
-var _characters = __webpack_require__(9);
+var _characters = __webpack_require__(0);
 
 var _hero = __webpack_require__(1);
 
@@ -209,45 +247,6 @@ var _ennemis = __webpack_require__(2);
 __webpack_require__(3);
 
 __webpack_require__(4);
-
-/***/ }),
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-// my parent - characters
-
-var Characters = exports.Characters = function () {
-	function Characters(nom, health, damage) {
-		_classCallCheck(this, Characters);
-
-		this.nom = nom;
-		this.health = health;
-		this.damage = damage;
-	}
-
-	_createClass(Characters, [{
-		key: "getattacked",
-		value: function getattacked(ennemis) {
-			this.health -= ennemis.damage;
-		}
-	}]);
-
-	return Characters;
-}();
 
 /***/ })
 /******/ ]);
