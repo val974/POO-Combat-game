@@ -60,46 +60,12 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ([
-/* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-// my parent - characters
-var Characters = exports.Characters = function Characters(nom, health, damage) {
-	_classCallCheck(this, Characters);
-
-	this.nom = nom;
-	this.health = health;
-	this.damage = damage;
-};
-
-/***/ }),
+/* 0 */,
 /* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _script = __webpack_require__(0);
-
-var _hero = __webpack_require__(2);
-
-var _ennemis = __webpack_require__(3);
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -110,9 +76,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.MyHero = undefined;
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _script = __webpack_require__(0);
+var _characters = __webpack_require__(9);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -124,46 +88,17 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var MyHero = exports.MyHero = function (_Characters) {
 	_inherits(MyHero, _Characters);
 
-	function MyHero(nom, health, damage, armor) {
+	function MyHero(nom, health, damage) {
 		_classCallCheck(this, MyHero);
 
-		var _this = _possibleConstructorReturn(this, (MyHero.__proto__ || Object.getPrototypeOf(MyHero)).call(this, nom, health, damage));
-
-		_this.armor = armor;
-		return _this;
+		return _possibleConstructorReturn(this, (MyHero.__proto__ || Object.getPrototypeOf(MyHero)).call(this, nom, health, damage));
 	}
 
-	_createClass(MyHero, [{
-		key: "healthBonus",
-		value: function healthBonus() {
-			this.health += 50;
-			return this.health += 50;
-			console.log(this.nom + ' a reçu un bonus de vie. ses pv sont a ' + this.health);
-		}
-	}, {
-		key: "armorBonus",
-		value: function armorBonus() {
-			this.armor += 20;
-			console.log(this.nom + " a reçu un bonus d'armure. ses points d'armure sont a " + this.armor);
-			return this.armor;
-		}
-	}]);
-
 	return MyHero;
-}(_script.Characters);
-
-var jack = new MyHero("Jack", 200, 15, 0);
-
-console.log(jack);
-/*console.log(jack.healthBonus());
-console.log(jack.health);
-console.log(jack.armorBonus());
-console.log(jack.armor);*/
-
-/*export default MyHero;*/
+}(_characters.Characters);
 
 /***/ }),
-/* 3 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -174,20 +109,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Ennemies = undefined;
 
-var _script = __webpack_require__(0);
+var _characters = __webpack_require__(9);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } //j'étends ma classe characters à ennemis
-/*class Characters {
-	constructor(nom, health,damage){
-		this.nom = nom;
-		this.health = health;
-		this.damage = damage;
-	}
-}*/
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Ennemies = exports.Ennemies = function (_Characters) {
 	_inherits(Ennemies, _Characters);
@@ -199,16 +127,127 @@ var Ennemies = exports.Ennemies = function (_Characters) {
 	}
 
 	return Ennemies;
-}(_script.Characters);
+}(_characters.Characters);
 
-//je donne des attributs à mes ennemis
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 
 
-var minion = new Ennemies("minion", 10, 10, 0);
-var lieutenantMinion = new Ennemies("Lieutenant Minion", 30, 30, 0);
-var chefMinion = new Ennemies("chefMinion", 100, 100, 0);
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.jack = undefined;
 
-/*export {Ennemies}*/
+var _characters = __webpack_require__(9);
+
+var _hero = __webpack_require__(1);
+
+var _ennemis = __webpack_require__(2);
+
+var _minion = __webpack_require__(4);
+
+var jack = exports.jack = new _hero.MyHero("Jack", 200, 15);
+
+var getButton = document.querySelectorAll('button');
+getButton[1].addEventListener("click", function essai() {
+	jack.getattacked(_minion.minion);
+	ecrire();
+});
+
+function ecrire() {
+	document.getElementById("pointsheros").innerHTML = "Les pv du héros sont de " + jack.health;
+}
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.minion = undefined;
+
+var _characters = __webpack_require__(9);
+
+var _hero = __webpack_require__(1);
+
+var _ennemis = __webpack_require__(2);
+
+var _jack = __webpack_require__(3);
+
+var minion = exports.minion = new _ennemis.Ennemies("minion", 30, 10);
+
+var getButton = document.querySelectorAll('button');
+getButton[0].addEventListener("click", function () {
+	minion.getattacked(_jack.jack);
+	pointsminion();
+});
+
+function pointsminion() {
+	document.getElementById("pointsMinion").innerHTML = "Les pv du héros sont de " + minion.health;
+}
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _characters = __webpack_require__(9);
+
+var _hero = __webpack_require__(1);
+
+var _ennemis = __webpack_require__(2);
+
+__webpack_require__(3);
+
+__webpack_require__(4);
+
+/***/ }),
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+// my parent - characters
+
+var Characters = exports.Characters = function () {
+	function Characters(nom, health, damage) {
+		_classCallCheck(this, Characters);
+
+		this.nom = nom;
+		this.health = health;
+		this.damage = damage;
+	}
+
+	_createClass(Characters, [{
+		key: "getattacked",
+		value: function getattacked(ennemis) {
+			this.health -= ennemis.damage;
+		}
+	}]);
+
+	return Characters;
+}();
 
 /***/ })
 /******/ ]);

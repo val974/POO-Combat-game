@@ -1,3 +1,5 @@
-import {Characters} from "../js/script.js";
+import {Characters} from "../js/characters.js"
 import {MyHero} from "../js/hero.js"
 import{Ennemies} from "../js/ennemis.js"
+import{} from "../js/jack.js"
+import{} from "../js/minion.js"
